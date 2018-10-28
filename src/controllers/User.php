@@ -15,16 +15,16 @@ class User extends Base
     public function getVars()
     {
         $vars = [
-            'nome' => $this->httpPost('nome'),
-            'sobrenome' => $this->httpPost('sobrenome'),
+            'name' => $this->httpPost('name'),
+            'lastname' => $this->httpPost('lastname'),
             'cpf' => $this->httpPost('cpf'),
-            'telefone' => $this->httpPost('telefone'),
             'email' => $this->httpPost('email'),
-            'nascimento' => $this->httpPost('nascimento'),
-            'endereco' => $this->httpPost('endereco'),
-            'clube' => $this->httpPost('clube'),
-            'plano' => $this->httpPost('plano'),
-            'titular' => $this->httpPost('titular')
+            // 'telefone' => $this->httpPost('phone'),
+            // 'nascimento' => $this->httpPost('nascimento'),
+            // 'endereco' => $this->httpPost('endereco'),
+            // 'clube' => $this->httpPost('clube'),
+            // 'plano' => $this->httpPost('plano'),
+            // 'titular' => $this->httpPost('titular')
         ];
         
         return $vars;
@@ -57,10 +57,10 @@ class User extends Base
         $vars = $this->getVars();
         
 
-                $user = new Models\Usuario;
+                $user = new Models\User;
 
-                $user->name = $vars['nome'];
-                $user->lastName = $vars['sobrenome'];
+                $user->name = $vars['name'];
+                $user->lastName = $vars['lastname'];
                 $user->cpf = $vars['cpf'];
                 $user->email = $vars['email'];
                 // $user->nascimento = $vars['nascimento'];
